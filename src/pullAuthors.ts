@@ -86,6 +86,7 @@ query($owner:String! $name:String! $number:Int! $cursor:String!){
             || (commit.committer || {}).user
             || commit.author
             || commit.committer;
+        console.log('!!!!!!!!!! author', author)
         return new Author({
             name: author.login || author.name,
             id: author.databaseId || undefined,
