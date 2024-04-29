@@ -34,7 +34,7 @@ export class PullComments {
                 });
                 return result.data.body;
             }
-        } catch (error) {
+        } catch (error: any) {
             if (error.status === 403) {
                 // No permissions to write a comment usually indicates this is running from a fork, so give up
                 // attempting to add or modify the comment.
@@ -65,7 +65,7 @@ export class PullComments {
                 }
                 page += 1
             } while (comments.length === 100)
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(`Failed to get PR comments: ${error.message}. Details: ${JSON.stringify(error)}`);
         }
     }
@@ -136,7 +136,7 @@ ${authorText}
                 );
                 page += 1
             } while (comments.length === 100)
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(`Failed to get PR comments: ${error.message}. Details: ${JSON.stringify(error)}`);
         }
 
