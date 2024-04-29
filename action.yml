@@ -24,7 +24,7 @@ inputs:
     description: "The personal access token to use when committing to the remote repository. Should be a github secrets reference."
     default: ""
   blockchain-storage-flag:
-    description: "(Optional) Store all the blockchain signatures in the ethirium blockchain as a smart contract."
+    description: "(Optional) Store all the blockchain signatures in the Ethereum blockchain as a smart contract."
     default: false
   blockchain-webhook-endpoint:
     description: "(Optional) The URL to post the blockchain request to."
