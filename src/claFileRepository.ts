@@ -35,7 +35,7 @@ export class ClaFileRepository {
     private async getOrCreateClaFile(): Promise<[ClaFile, string]> {
         core.debug("Getting CLA file from source repository.");
         try {
-            const fileResult = await this.settings.octokitRemote.repos.getContents({
+            const fileResult = await this.settings.octokitRemote.repos.getContent({
                 owner: this.settings.remoteRepositoryOwner,
                 repo: this.settings.remoteRepositoryName,
                 path: this.settings.claFilePath,
@@ -49,7 +49,7 @@ export class ClaFileRepository {
 
             // Cache the Sha in case we need to add commits to the operation.
             return [new ClaFile(fileResult.data.content), fileResult.data.sha];
-        } catch (error) {
+        } catch (error: any) {
             // Only want to catch if the result is a response with a 404 error code, indicating no file was found.
             if (error.status === 404) {
                 core.debug("Creating CLA file as it does not currently exist.");

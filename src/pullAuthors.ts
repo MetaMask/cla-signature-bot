@@ -73,7 +73,7 @@ query($owner:String! $name:String! $number:Int! $cursor:String!){
                 );
             } while (result.repository.pullRequest.commits.pageInfo.hasNextPage)
             return authors;
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(`GraphQL query to get commit authors failed: '${error.message}'. Details: ${JSON.stringify(error)} `);
         }
     }
