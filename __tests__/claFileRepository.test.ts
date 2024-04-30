@@ -52,10 +52,10 @@ function mockWith(sha: string, createSha: string, content?: ClaFile) {
 
     let getContentsSpy;
     if (!content) {
-        getContentsSpy = jest.spyOn(mockGitHub.repos, 'getContents')
+        getContentsSpy = jest.spyOn(mockGitHub.repos, 'getContent')
         .mockImplementation(async (params) => { throw { status: 404 } });
     } else {
-        getContentsSpy = jest.spyOn(mockGitHub.repos, 'getContents')
+        getContentsSpy = jest.spyOn(mockGitHub.repos, 'getContent')
         .mockImplementation(async (params) => ({
             url: "",
             data: {
