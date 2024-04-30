@@ -69,7 +69,7 @@ Add a comment with the requested signature to your pull request to sign the CLA.
 
 ### Allowlist Accounts
 
-The `allowlist` parameter is a comma-seprated list of accounts which should not be considered for CLA signature verification. These accounts will **completely bypass the signature process**, and if all authors are allowlisted in a PR the CLA Signature Action won't even comment on the PR.
+The `allowlist` parameter is a comma-separated list of accounts which should not be considered for CLA signature verification. These accounts will **completely bypass the signature process**, and if all authors are allowlisted in a PR the CLA Signature Action won't even comment on the PR.
 
 This feature is particularly useful for other bot accounts, such as dependabot or greenkeeper. For example, `dependabot-preview[bot],greenkeeper[bot]` will allowlist both of those bot accounts.
 
