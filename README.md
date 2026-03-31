@@ -1,4 +1,4 @@
-# Contributor License Agreement Signature GitHub Action
+# Contributor License Agreement test GitHub Action
 
 ![build](https://github.com/Roblox/cla-assistant/workflows/build/badge.svg?branch=master)
 

