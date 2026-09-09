@@ -42,6 +42,9 @@ inputs:
     description: "The text to require as a signature."
   signature-regex:
     description: "The regex to locate the signature text. Should be single quoted. Note that comment bodies are toUpperCase'd before matching."
+  comment-title:
+    description: "Title used to find and update the bot's sticky PR comment. Defaults to 'CLA Signature Action'. Set a unique value per scope when running multiple CLA jobs on the same PR (e.g. one per monorepo package) so each scope keeps its own comment."
+    default: "CLA Signature Action"
 runs:
   using: "node24"
   main: "lib/index.js"
