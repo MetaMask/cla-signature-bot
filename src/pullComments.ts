@@ -6,11 +6,13 @@ import { SignEvent } from "./signEvent";
 export class PullComments {
     readonly settings: IInputSettings;
 
-    readonly BotName = "CLA Signature Action";
-    readonly BotNameRegex = new RegExp(`.*${this.BotName}.*`);
+    readonly BotName: string;
+    readonly BotNameRegex: RegExp;
 
     constructor(settings: IInputSettings) {
-        this.settings = settings
+        this.settings = settings;
+        this.BotName = settings.commentTitle;
+        this.BotNameRegex = new RegExp(`.*${this.BotName}.*`);
     }
 
     public async setClaComment(authorMap: AuthorMap): Promise<string> {

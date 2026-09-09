@@ -69,6 +69,7 @@ export function getInputs(): IInputSettings {
     // This is technically deprecated, see the note in pullComments.ts on why.
     settings.emptyCommitFlag = (core.getInput('empty-commit-flag') || 'FALSE').toUpperCase() === 'TRUE';
     settings.claDocUrl = core.getInput('url-to-cladocument', required);
+    settings.commentTitle = core.getInput('comment-title') || 'CLA Signature Action';
 
     settings.octokitLocal = github.getOctokit(settings.localAccessToken);
     settings.octokitRemote = github.getOctokit(settings.repositoryAccessToken);

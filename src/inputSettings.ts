@@ -112,6 +112,14 @@ export interface IInputSettings {
     claDocUrl: string
 
     /**
+     * The title used to identify and update the bot's sticky PR comment.
+     * Defaults to "CLA Signature Action". Set a unique value per scope when
+     * running multiple CLA jobs on the same PR (e.g. one per monorepo package)
+     * so each scope gets its own comment instead of overwriting the others.
+     */
+    commentTitle: string
+
+    /**
      * The octokit instance for interacting with the CLA file's repository.
      */
     octokitRemote: InstanceType<typeof GitHub>
